@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily apt refresh
+Documentation=man:apt(8)
+ConditionACPower=true
+After=network.target network-online.target systemd-networkd.service NetworkManager.service connman.service
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStartPre=-/usr/lib/apt/apt-helper wait-online
+ExecStart=%h/.local/bin/debian-updater-notifier.sh
+
