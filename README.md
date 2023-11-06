@@ -33,9 +33,13 @@ root=UUID=12345 ro quiet splash
 
 # Install
 As user with sudo rights (not root!):
+
 git clone https://github.com/vari4bled/debian-auto-updater.git
+
 cd ./debian-auto-updater
+
 ./install.sh
+
 
 # Configuration
 You can modify the timers to suit your needs. By default it runs apt update between 04:00 and 04:10. And it downloads the updates themselves and queues them for install at reboot/shutdown on Sunday after 04:10. If it misses a run due to downtime it will run after a random time(10m).
