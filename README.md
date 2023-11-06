@@ -5,12 +5,14 @@ I created this quick script to have PackageKit provided auto update with notific
 # Requirements
 **Dependencies: gnome-packagekit packagekit-tools dconf-editor libnotify-bin plymouth (will be installed by install.sh)**
 **Splash kernel parameter (and recommended quiet)**
+
 *With grub:*
 
 https://wiki.archlinux.org/title/GRUB
 https://wiki.debian.org/Grub
 
 *With standard systemdboot setup:*
+
 add splash and quiet to cmdline, example:
 cat /etc/kernel/cmdline
 root=UUID=12345 ro quiet splash
