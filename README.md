@@ -5,12 +5,15 @@ I created this quick script to have PackageKit provided auto update with notific
 # How it looks:
 
 Daily refresh:
+
 ![image](https://github.com/vari4bled/debian-auto-updater/assets/105917652/03bb8067-0d5f-41b6-9c2b-347ba32e11d2)
 
 Prepared updates:
+
 ![image](https://github.com/vari4bled/debian-auto-updater/assets/105917652/3212642f-874c-4854-ba3f-e11654e669ff)
 
 Shutdown:
+
 ![image](https://github.com/vari4bled/debian-auto-updater/assets/105917652/f76e0a55-ffa3-4884-8a47-be42a0cec363)
 
 # Requirements
