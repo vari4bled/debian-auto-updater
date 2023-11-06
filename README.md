@@ -17,45 +17,43 @@ Shutdown:
 ![image](https://github.com/vari4bled/debian-auto-updater/assets/105917652/f76e0a55-ffa3-4884-8a47-be42a0cec363)
 
 # Requirements
-**Dependencies: gnome-packagekit packagekit-tools dconf-editor libnotify-bin plymouth (will be installed by install.sh)**
+**Dependencies: gnome-packagekit packagekit-tools dconf-editor libnotify-bin plymouth (will be installed by install.sh)**  
 **Splash kernel parameter (and recommended quiet)**
 
 *With grub:*
 
-https://wiki.archlinux.org/title/GRUB
-https://wiki.debian.org/Grub
+https://wiki.archlinux.org/title/GRUB  
+https://wiki.debian.org/Grub  
 
 *With standard systemdboot setup:*
 
-add splash and quiet to cmdline, example:
-cat /etc/kernel/cmdline
-root=UUID=12345 ro quiet splash
+add splash and quiet to cmdline, example:  
+cat /etc/kernel/cmdline  
+root=UUID=12345 ro quiet splash  
 
 # Install
 As user with sudo rights (not root!):
 
-git clone https://github.com/vari4bled/debian-auto-updater.git
-
-cd ./debian-auto-updater
-
-./install.sh
+git clone https://github.com/vari4bled/debian-auto-updater.git  
+cd ./debian-auto-updater  
+./install.sh  
 
 
 # Configuration
 You can modify the timers to suit your needs. By default it runs apt update between 04:00 and 04:10. And it downloads the updates themselves and queues them for install at reboot/shutdown on Sunday after 04:10. If it misses a run due to downtime it will run after a random time(10m).
-To modify the timers you can edit and play around with the OnCalendar in:
-~/.config/systemd/user/apt-autoupdate-refresh.timer (This runs the daily apt refresh)
-~/.config/systemd/user/apt-autoupdate-update.timer (This downloads and queues updates on Sunday)
-To help with the OnCalendar:
-https://wiki.archlinux.org/title/systemd/Timers
+To modify the timers you can edit and play around with the OnCalendar in:  
+~/.config/systemd/user/apt-autoupdate-refresh.timer (This runs the daily apt refresh)  
+~/.config/systemd/user/apt-autoupdate-update.timer (This downloads and queues updates on Sunday)  
+To help with the OnCalendar:  
+https://wiki.archlinux.org/title/systemd/Timers  
 
 
 # Remove
-You can just disable the timers(or manually delete files):
-systemctl --user disable apt-autoupdate-refresh.timer
-systemctl --user disable apt-autoupdate-update.timer
-systemctl --user stop apt-autoupdate-refresh.timer
-systemctl --user stop apt-autoupdate-update.timer
+You can just disable the timers(or manually delete files):  
+systemctl --user disable apt-autoupdate-refresh.timer  
+systemctl --user disable apt-autoupdate-update.timer  
+systemctl --user stop apt-autoupdate-refresh.timer  
+systemctl --user stop apt-autoupdate-update.timer  
 
 # Warning:
 
