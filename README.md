@@ -18,18 +18,16 @@ Shutdown:
 
 # Requirements
 **Dependencies: gnome-packagekit packagekit-tools dconf-editor libnotify-bin plymouth (will be installed by install.sh)**  
-**Splash kernel parameter (and recommended quiet)**
 
-*With grub:*
-
+**Splash kernel parameter (and recommended quiet)**  
+**With grub:**  
 https://wiki.archlinux.org/title/GRUB  
 https://wiki.debian.org/Grub  
 
-*With standard systemdboot setup:*
-
+**With standard systemdboot setup:**
 add splash and quiet to cmdline, example:  
-cat /etc/kernel/cmdline  
-root=UUID=12345 ro quiet splash  
+*cat /etc/kernel/cmdline*  
+*root=UUID=12345 ro quiet splash*  
 
 # Install
 As user with sudo rights (not root!):
